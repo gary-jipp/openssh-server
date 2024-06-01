@@ -9,8 +9,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends wget curl nano 
 && apt-get clean && rm -rf /var/log/apt
 
 COPY  home/*  .
-COPY  startup.sh /
+COPY  entrypoint.sh /
 
 # && rm -rf .github && rm -f Dockerfile && rm -f .dockerignore && rm -f README.md
 
-ENTRYPOINT  ["/startup.sh"]
+ENTRYPOINT  ["/entrypoint.sh"]
